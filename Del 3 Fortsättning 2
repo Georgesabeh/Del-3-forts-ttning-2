@@ -1,0 +1,29 @@
+TextCounterTest.java
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+public class TextCounterTest {
+
+    @Test
+    public void testCountCharacters() {
+        TextCounter counter = new TextCounter();
+        counter.count("Hej");
+        assertEquals(3, counter.getTotalChars());
+    }
+
+    @Test
+    public void testCountLines() {
+        TextCounter counter = new TextCounter();
+        counter.count("Raden1");
+        counter.count("Raden2");
+        assertEquals(2, counter.getTotalLines());
+    }
+
+    @Test
+    public void testCountWords() {
+        TextCounter counter = new TextCounter();
+        counter.count("Hej världen");
+        assertEquals(2, counter.getTotalWords());
+    }
+}
